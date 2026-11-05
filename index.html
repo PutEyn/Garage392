@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Garage 3922 — автосервис и запчасти в Бишкеке</title>
+<meta name="description" content="Garage 3922 — автосервис: диагностика, ремонт, продажа запчастей. Тормозные колодки, антифриз, свечи зажигания. Гарантия 1 месяц. Работаем 7 дней в неделю с 9:00 до 22:00.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" sizes="64x64" href="icon-64.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<meta property="og:title" content="Garage 3922 — автосервис и запчасти">
+<meta property="og:description" content="Честная диагностика, цена до начала работ, гарантия 1 месяц. Запчасти и расходники в наличии.">
+<meta property="og:image" content="banner.jpg">
+<meta property="og:image:width" content="692">
+<meta property="og:image:height" content="377">
+<meta property="og:url" content="https://garage3922.kg/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="ky_KG">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"AutoPartsStore",
+  "name":"Garage 3922",
+  "url":"https://garage3922.kg/",
+  "image":"https://garage3922.kg/banner.jpg",
+  "logo":"https://garage3922.kg/logo-128.webp",
+  "telephone":"+996705909918",
+  "priceRange":"200–8000 KGS",
+  "address":{"@type":"PostalAddress","streetAddress":"пр. Жибек-Жолу, 256/2","addressLocality":"Бишкек","addressCountry":"KG"},
+  "openingHoursSpecification":[{
+    "@type":"OpeningHoursSpecification",
+    "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens":"09:00","closes":"22:00"
+  }],
+  "sameAs":["https://wa.me/996705909918", "https://2gis.kg/bishkek/geo/15763208581152773"]
+}
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- СКРЫТЫЕ SVG-ИКОНКИ (только для мастеров) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="man" viewBox="0 0 100 100">
+<path d="M10 100Q12 68 50 66Q88 68 90 100Z" style="fill:var(--s)"/>
+<path d="M42 62h16v10Q50 78 42 72Z" style="fill:var(--k)"/>
+<ellipse cx="50" cy="44" rx="18" ry="21" style="fill:var(--k)"/>
+<path d="M32 50Q50 82 68 50Q66 74 50 76Q34 74 32 50Z" style="fill:var(--b)"/>
+<path d="M31 40Q31 19 50 19Q69 19 69 40Q60 30 50 30Q40 30 31 40Z" style="fill:var(--h)"/>
+<path d="M28 34Q50 6 72 34Z" style="fill:var(--c)"/><rect x="26" y="32" width="48" height="5" rx="2" style="fill:var(--c)"/>
+<circle cx="43" cy="46" r="2.2" fill="#222"/><circle cx="57" cy="46" r="2.2" fill="#222"/>
+<path d="M43 56Q50 61 57 56" stroke="#222" stroke-width="2" fill="none" stroke-linecap="round"/>
+<rect x="44" y="82" width="12" height="6" rx="2" fill="#fff" opacity=".85"/>
+</symbol>
+</defs></svg>
+
+<div class="w" id="top">
+
+<!-- ШАПКА -->
+<header>
+<a class="logo" href="#top"><img src="logo-128.webp" alt="Garage 3922" width="46" height="46"><span>GARAGE <b>3922</b></span></a>
+<nav><a href="#services">Услуги</a><a href="#masters">Мастера</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a></nav>
+<div class="row" style="flex-wrap:nowrap;align-items:center">
+<div class="lang">
+  <button type="button" data-lang="ru" aria-label="Русский" title="Русский">
+    <img src="rus.png" alt="RU" onerror="this.style.display='none'">
+  </button>
+  <button type="button" data-lang="ky" aria-label="Кыргызча" title="Кыргызча">
+    <img src="kg.png" alt="KG" onerror="this.style.display='none'">
+  </button>
+</div>
+<button class="btn o s" id="theme" type="button" aria-label="Сменить тему оформления">🌓</button><a class="btn s hdr-cta" href="#book">Записаться</a></div></header>
+
+<!-- ГЛАВНЫЙ ЭКРАН -->
+<section class="hero">
+<div>
+<div class="badge" id="open" data-dyn></div>
+<h1>Ремонт, обслуживание и <span>запчасти</span></h1>
+<p>Честная диагностика, точная цена до начала работ и гарантия 1 месяц. Продаем тормозные колодки, антифриз и свечи зажигания.</p>
+<div class="row"><a class="btn" href="#book">Записаться на приём</a><a class="btn o" href="#services">Услуги и товары</a></div>
+</div>
+<img class="art" src="banner.jpg" alt="Garage 3922 — автосервис и запчасти" width="692" height="377" fetchpriority="high">
+</section>
+
+<!-- ЦИФРЫ -->
+<div class="stats">
+<div><b>5+</b><span>лет работаем</span></div>
+<div><b>1000+</b><span>обслуженных авто</span></div>
+<div><b>1 мес.</b><span>гарантия на работы</span></div>
+<div><b>7 дней</b><span>работаем без выходных</span></div>
+</div>
+
+<!-- УСЛУГИ И ТОВАРЫ -->
+<h2 id="services">Услуги и запчасти</h2>
+<p class="sub">Цены ориентировочные - точную стоимость назовём после диагностики.</p>
+<div class="grid">
+  
+  <!-- ЗАПЧАСТИ -->
+  <div class="c" style="border-color: var(--ac);">
+    <div class="ic-wrap">
+      <img src="Тор-колодка.png" class="ic-img" alt="Тормозные колодки">
+    </div>
+    <h3>Тормозные колодки</h3>
+    <p>Передние и задние, оригинал и качественные аналоги.</p>
+    <div class="pr"><span>от 1 500 сом</span><button class="btn s" data-svc="Тормозные колодки">Купить</button></div>
+  </div>
+
+  <div class="c" style="border-color: var(--ac);">
+    <div class="ic-wrap">
+       <img src="Антифриз.png" class="ic-img" alt="Антифриз"> 
+    </div>
+    <h3>Антифриз</h3>
+    <p>Качественная охлаждающая жидкость для вашего авто.</p>
+    <div class="pr"><span>от 400 сом</span><button class="btn s" data-svc="Антифриз">Купить</button></div>
+  </div>
+
+  <div class="c" style="border-color: var(--ac);">
+    <div class="ic-wrap">
+      <img src="Свеча.png" class="ic-img" alt="Свечи зажигания"> 
+    </div>
+    <h3>Свечи зажигания</h3>
+    <p>Оригинальные и аналоги, подбор по марке авто.</p>
+    <div class="pr"><span>от 300 сом</span><button class="btn s" data-svc="Свечи зажигания">Купить</button></div>
+  </div>
+
+  <!-- УСЛУГИ -->
+  <div class="c">
+    <div class="ic-wrap">
+      <img src="Диагностика.png" class="ic-img" alt="Диагностика"> 
+    </div>
+    <h3>Диагностика</h3><p>Компьютерная, ходовой части, тормозной системы</p><div class="pr">от 500 сом<button class="btn o s" data-svc="Диагностика">Записаться</button></div>
+  </div>
+  
+  <div class="c">
+    <div class="ic-wrap">
+      <img src="Ходовка.png" class="ic-img" alt="Ходовая часть"> 
+    </div>
+    <h3>Ходовая часть</h3><p>Подвеска, рулевое управление, тормозная система</p><div class="pr">от 1 000 сом<button class="btn o s" data-svc="Ходовая часть и тормоза">Записаться</button></div>
+  </div>
+  
+  <div class="c">
+    <div class="ic-wrap">
+      <img src="Грм.png" class="ic-img" alt="Двигатель и КПП"> 
+    </div>
+    <h3>Двигатель и КПП</h3><p>Ремонт, замена ремня ГРМ, сцепления</p><div class="pr">от 2 000 сом<button class="btn o s" data-svc="Двигатель и КПП">Записаться</button></div>
+  </div>
+  
+  <div class="c">
+    <div class="ic-wrap">
+      <img src="Электрика.png" class="ic-img" alt="Электрика"> 
+    </div>
+    <h3>Электрика</h3><p>Поиск неисправностей, АКБ, генератор, стартер</p><div class="pr">от 800 сом<button class="btn o s" data-svc="Электрика">Записаться</button></div>
+  </div>
+  
+  <div class="c">
+    <div class="ic-wrap">
+      : <img src="Капитальный-ремонт.png" class="ic-img" alt="Диагностика двигателя"> 
+    </div>
+    <h3>Диагностика двигателя</h3><p>Поиск причин стука, троения, потери мощности</p><div class="pr">от 700 сом<button class="btn o s" data-svc="Диагностика двигателя">Записаться</button></div>
+  </div>
+  
+  <div class="c">
+    <div class="ic-wrap">
+      <img src="Капитальный-ремонт.png" class="ic-img" alt="Капитальный ремонт"> 
+    </div>
+    <h3>Капитальный ремонт</h3><p>Полная разборка и восстановление двигателя</p><div class="pr">от 8 000 сом<button class="btn o s" data-svc="Капитальный ремонт">Записаться</button></div>
+  </div>
+  
+  <div class="c">
+    <div class="ic-wrap">
+      <img src="Грм.png" class="ic-img" alt="Замена ГРМ">
+    </div>
+    <h3>Замена ГРМ</h3><p>Ремень/цепь ГРМ, ролики, сальники</p><div class="pr">от 1 500 сом<button class="btn o s" data-svc="Замена ГРМ">Записаться</button></div>
+  </div>
+  
+  <div class="c">
+    <div class="ic-wrap">
+      <img src="Трубина.png" class="ic-img" alt="Ремонт турбин">
+    </div>
+    <h3>Ремонт турбин</h3><p>Диагностика, восстановление, замена картриджа</p><div class="pr">от 3 000 сом<button class="btn o s" data-svc="Ремонт турбин">Записаться</button></div>
+  </div>
+  
+  <div class="c">
+    <div class="ic-wrap">
+      <img src="Диагностика-электроники.png" class="ic-img" alt="Диагностика электроники"> 
+    </div>
+    <h3>Диагностика электроники</h3><p>Сканер, поиск ошибок, проверка датчиков</p><div class="pr">от 600 сом<button class="btn o s" data-svc="Диагностика электроники">Записаться</button></div>
+  </div>
+  
+  <div class="c">
+    <div class="ic-wrap">
+      <img src="Ремонт-блоков-управления.png" class="ic-img" alt="Ремонт блоков управления">
+    </div>
+    <h3>Ремонт блоков управления</h3><p>ЭБУ, блоки комфорта, иммобилайзеры</p><div class="pr">от 1 200 сом<button class="btn o s" data-svc="Ремонт блоков управления">Записаться</button></div>
+  </div>
+  
+  <div class="c">
+    <div class="ic-wrap">
+      <img src="Проводка.png" class="ic-img" alt="Проводка">
+    </div>
+    <h3>Проводка</h3><p>Поиск замыканий, восстановление жгутов</p><div class="pr">от 800 сом<button class="btn o s" data-svc="Проводка">Записаться</button></div>
+  </div>
+  
+  <div class="c">
+    <div class="ic-wrap">
+      <img src="Установка оборудования.png" class="ic-img" alt="Установка оборудования">
+    </div>
+    <h3>Установка оборудования</h3><p>Сигнализации, камеры, парктроники</p><div class="pr">от 1 000 сом<button class="btn o s" data-svc="Установка оборудования">Записаться</button></div>
+  </div>
+  
+  <div class="c">
+    <div class="ic-wrap">
+      <img src="Развал-схождение.png" class="ic-img" alt="Расвал схождение"> 
+    </div>
+    <h3>Развал-схождение</h3><p>3D-стенд, регулировка углов установки колёс</p><div class="pr">от 1 000 сом<button class="btn o s" data-svc="Развал-схождение">Записаться</button></div>
+  </div>
+  
+  <div class="c">
+    <div class="ic-wrap">
+      <img src="Универсальные работы.png" class="ic-img" alt="Универсальные работы"> 
+    </div>
+    <h3>Универсальные работы</h3><p>Замена расходников, мелкий ремонт, ТО</p><div class="pr">от 700 сом<button class="btn o s" data-svc="Универсальные работы">Записаться</button></div>
+  </div>
+  
+  <div class="c">
+    <div class="ic-wrap">
+      <img src="Другое.png" class="ic-img" alt="Другое"> 
+    </div>
+    <h3>Другое</h3><p>Опишите проблему - подберём мастера</p><div class="pr">по осмотру<button class="btn o s" data-svc="Другое">Записаться</button></div>
+  </div>
+</div>
+
+<!-- МАСТЕРА -->
+<h2 id="masters">Наши мастера</h2>
+<p class="sub">Выберите мастера - он подставится в форму записи</p>
+<div class="grid">
+  <div class="c m m-card">
+    <svg class="ph" style="--s:#f2b800;--k:#e3b48f;--h:#1a1a1a;--b:transparent;--c:#1c1c1e"><use href="#man"/></svg>
+    <h3>Чериков Евгений</h3>
+    <div class="role">Моторист</div>
+    <p class="tag">Стаж 5 лет. Диагностика двигателя, капитальный ремонт, замена ГРМ и сальников, ремонт турбин.</p>
+    <div class="pr" style="width:100%;justify-content:center;margin-top:auto">
+      <button class="btn o s pick" data-m="Чериков Евгений">Выбрать</button>
+    </div>
+  </div>
+  <div class="c m m-card">
+    <svg class="ph" style="--s:#3a3a3d;--k:#b98462;--h:#1a1a1a;--b:#1a1a1a;--c:#f2b800"><use href="#man"/></svg>
+    <h3>Нурлан Алымканов</h3>
+    <div class="role">Электрика и электроника</div>
+    <p class="tag">Стаж 15 лет. Диагностика электроники, ремонт блоков управления, проводка и установка оборудования.</p>
+    <div class="pr" style="width:100%;justify-content:center;margin-top:auto">
+      <button class="btn o s pick" data-m="Нурлан Алымканов">Выбрать</button>
+    </div>
+  </div>
+  <div class="c m m-card">
+    <svg class="ph" style="--s:#9a9da3;--k:#f0c7a4;--h:#b8892f;--b:transparent;--c:#2a2a2d"><use href="#man"/></svg>
+    <h3>Нурбек уулу Адилет</h3>
+    <div class="role">Ходовщик · универсал</div>
+    <p class="tag">Стаж 5 лет. Ходовая часть, тормозная система, развал-схождение, универсальные работы.</p>
+    <div class="pr" style="width:100%;justify-content:center;margin-top:auto">
+      <button class="btn o s pick" data-m="Нурбек уулу Адилет">Выбрать</button>
+    </div>
+  </div>
+</div>
+
+<!-- ПОЧЕМУ ВЫБИРАЮТ -->
+<h2>Почему выбирают Garage 3922</h2>
+<p class="sub">То, за что нас рекомендуют</p>
+<div class="grid">
+<div class="c">
+  <div class="ic-wrap">
+    <img src="Проверенные-запчасти.png" class="ic-img" alt="Проверенные запчасти"> 
+  </div>
+  <h3>Проверенные запчасти</h3><p>Оригинал и качественные аналоги, подберём под бюджет</p>
+</div>
+<div class="c">
+  <div class="ic-wrap">
+    <img src="Фотоотчёт.png" class="ic-img" alt="Фотоотчёт">
+  </div>
+  <h3>Фотоотчёт</h3><p>Покажем, что сломано и что заменили</p>
+</div>
+<div class="c">
+  <div class="ic-wrap">
+    <img src="Ремонт-в-срок.png" class="ic-img" alt="Ремонт в сроки">
+  </div>
+  <h3>Ремонт в срок</h3><p>Называем срок заранее и предупреждаем, если что-то меняется</p>
+</div>
+</div>
+
+<!-- ЭТАПЫ -->
+<h2>Как проходит ремонт</h2>
+<p class="sub">Всё прозрачно на каждом этапе</p>
+<div class="steps">
+<div class="c"><h3>Запись</h3><p>Оставляете заявку, мы подтверждаем время</p></div>
+<div class="c"><h3>Диагностика</h3><p>Находим причину и показываем её вам</p></div>
+<div class="c"><h3>Ремонт и гарантия</h3><p>Делаем в срок, выдаём гарантию 1 месяц</p></div>
+</div>
+
+<!-- ОТЗЫВЫ -->
+<h2>Отзывы клиентов</h2>
+<div class="grid">
+<div class="c"><div class="stars">★★★★★</div><p>Машина вибрировала - нашли причину, сделали. Электрик знает своё дело и объяснил всё чётко.</p><b>u_namikii</b><small class="date">2ГИС</small></div>
+<div class="c"><div class="stars">★★★★★</div><p>Мастера быстро провели диагностику, нашли причину неисправности и качественно всё исправили. Работой осталась довольна, всё сделали аккуратно.</p><b>Aizhan Balkabaeva</b><small class="date">2ГИС</small></div>
+<div class="c"><div class="stars">★★★★★</div><p>Сделал Stage 1 Евро 2 на Мерс 211 - тяга пушка получилась. Мастера знают своё дело.</p><b>Асход Жеенбаев</b><small class="date">2ГИС</small></div>
+</div>
+<p class="sub" style="margin-top:12px"><a href="https://2gis.kg/bishkek/geo/15763208581152773/74.622437,42.885198" target="_blank" rel="noopener" style="color:var(--ac)">Смотреть все отзывы в 2ГИС →</a></p>
+
+<!-- ФОРМА -->
+<h2 id="book">Запись / Заказ</h2>
+<p class="sub">Оставьте данные - мы подтвердим наличие и время</p>
+<form id="f" novalidate>
+<div class="two">
+<label>Имя<input id="name" name="name" required autocomplete="name" placeholder="Как к вам обращаться"></label>
+<label>Телефон<input id="phone" name="phone" type="tel" inputmode="tel" required autocomplete="tel" placeholder="+996 (555) 000-000"></label>
+</div>
+<div class="two">
+<label>Мастер
+  <select name="master" id="master">
+    <option value="Любой свободный">Любой свободный</option>
+    <option value="Чериков Евгений">Чериков Евгений</option>
+    <option value="Нурлан Алымканов">Нурлан Алымканов</option>
+    <option value="Нурбек уулу Адилет">Нурбек уулу Адилет</option>
+  </select>
+</label>
+<label>Услуга / Товар
+  <select name="svc" id="svc"></select>
+</label>
+</div>
+<div class="two">
+<label>Дата<input name="date" type="date" id="date" required></label>
+<label>Время<select name="time"><option value="09:00">09:00</option><option value="10:00">10:00</option><option value="11:00">11:00</option><option value="12:00">12:00</option><option value="13:00">13:00</option><option value="14:00">14:00</option><option value="15:00">15:00</option><option value="16:00">16:00</option><option value="17:00">17:00</option><option value="18:00">18:00</option><option value="19:00">19:00</option><option value="20:00">20:00</option><option value="21:00">21:00</option></select></label>
+</div>
+<label>Автомобиль и что случилось / какой товар нужен<textarea name="car" rows="3" placeholder="Марка, модель, год, описание проблемы"></textarea></label>
+<div id="err" role="alert" aria-live="polite" data-dyn style="color:#c0392b;font-size:14px"></div>
+<button class="btn" type="submit">Отправить заявку</button>
+</form>
+<div id="ok"><b>Заявка собрана!</b><p id="sum" data-dyn style="color:var(--mut);margin:8px 0 14px"></p><a class="btn" id="wa" target="_blank" rel="noopener" href="#">Отправить в WhatsApp</a> <a class="btn o" id="tg" target="_blank" rel="noopener" href="#">Отправить в Telegram</a> <button class="btn o" id="cp" type="button"><span id="cpt">Скопировать заявку</span></button></div>
+
+<!-- FAQ -->
+<h2 id="faq">Частые вопросы</h2>
+<details><summary>Сколько стоит диагностика?</summary><p>Осмотр и консультация, компьютерная диагностика - от 500 сом.</p></details>
+<details><summary>Даёте ли гарантию?</summary><p>Да, на выполненные работы - 1 месяц, на запчасти - по гарантии производителя.</p></details>
+<details><summary>Работаете ли в воскресенье?</summary><p>Да, мы работаем 7 дней в неделю с 9:00 до 22:00, без выходных.</p></details>
+<details><summary>Можно приехать со своими запчастями?</summary><p>Можно. Мы поможем подобрать нужные детали, а при необходимости закажем их сами.</p></details>
+<details><summary>Сколько длится ремонт?</summary><p>Диагностику - от часа, сложный ремонт - от одного дня. Сроки называем после диагностики.</p></details>
+
+<!-- ПОДВАЛ -->
+<footer id="contacts">
+<div class="fbrand"><img src="logo-128.webp" alt="" width="64" height="64" loading="lazy"><div><b>Garage 3922</b><br>Автосервис полного цикла</div></div>
+<div><b>Адрес</b><br>Проспект Жибек-Жолу, 256/2, Бишкек</div>
+<div><b>Режим работы</b><br>Пн–Вс 9:00–22:00, без выходных</div>
+<div><b>Телефон</b><br><a href="tel:+996705909918" style="color:var(--ac)">+996 705 909 918</a></div>
+</footer>
+</div>
+
+<!-- МОБИЛЬНАЯ ПАНЕЛЬ -->
+<div class="cta"><a class="btn o" href="tel:+996705909918">📞 Позвонить</a><a class="btn" href="#book">Записаться</a></div>
+
+<script src="script.js"></script>
+</body>
+</html>
