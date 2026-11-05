@@ -8,14 +8,13 @@
   --hg:linear-gradient(#fff,#c4c7cc 55%,#8e929a);
   --bgimg:radial-gradient(700px 360px at 85% -60px,rgba(255,212,0,.14),transparent),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49'%3E%3Cpath d='M14 0l14 8v16l-14 8L0 24V8zM14 32l14 8v9M14 32L0 40v9' fill='none' stroke='%23ffd400' stroke-opacity='.06'/%3E%3C/svg%3E");
   
-  /* Фильтр для перекраски черных картинок в желтый цвет */
   --icon-filter: invert(78%) sepia(96%) saturate(1521%) hue-rotate(358deg) brightness(103%) contrast(105%);
 }
 
 :root[data-theme="light"]{
   --bg:#f5f4ef;--bg2:#e9e7df;--card:#fff;--tx:#141414;--mut:#5d5f64;--line:#ddd9cc;--ac:#b88700;
   --hg:linear-gradient(#111,#3a3a3a);--bgimg:none;
-  --icon-filter: none; /* В светлой теме картинки остаются черными */
+  --icon-filter: none;
 }
 
 /* БАЗОВЫЕ СТИЛИ */
@@ -25,7 +24,8 @@ body{
   margin:0; background-color:var(--bg); background-image:var(--bgimg); color:var(--tx);
   font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   padding-top:env(safe-area-inset-top,0px); padding-bottom:calc(76px + env(safe-area-inset-bottom,0px));
-  -webkit-tap-highlight-color: transparent; /* Убирает синюю рамку при тапе на телефоне */
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden; /* Страховка от вылезания вправо */
 }
 .w{max-width:980px;margin:0 auto;padding:0 18px}
 
@@ -35,8 +35,9 @@ header{
   display:flex; justify-content:space-between; align-items:center;
   padding:10px 0; border-bottom:1px solid var(--line); gap:10px;
 }
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:.5px;color:var(--tx);text-decoration:none;flex-shrink:0}
-.logo img{width:46px;height:46px;border-radius:50%;display:block}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:.5px;color:var(--tx);text-decoration:none;flex-shrink:1; min-width:0;}
+.logo span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.logo img{width:46px;height:46px;border-radius:50%;display:block;flex-shrink:0;}
 .logo b{color:var(--ac)}
 nav{display:flex;gap:18px;font-size:15px}
 nav a{color:var(--mut);text-decoration:none}
@@ -78,20 +79,9 @@ h2::after{content:"";display:block;width:56px;height:3px;background:var(--gold);
 .c p{margin:0;color:var(--mut);font-size:14px}
 .c small.date{color:var(--mut);font-size:12px;opacity:.75}
 
-/* МЕСТО ДЛЯ ВАШИХ КАРТИНОК (ИКОНКИ УСЛУГ) */
-.ic-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 48px;
-  margin-bottom: 8px;
-}
-.ic-img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  filter: var(--icon-filter); 
-}
+/* МЕСТО ДЛЯ ВАШИХ КАРТИНОК */
+.ic-wrap { display: flex; align-items: center; justify-content: center; height: 48px; margin-bottom: 8px; }
+.ic-img { width: 40px; height: 40px; object-fit: contain; filter: var(--icon-filter); }
 
 .pr{margin-top:auto;padding-top:10px;display:flex;justify-content:space-between;align-items:center;font-weight:700;color:var(--ac);gap:8px}
 
@@ -116,8 +106,36 @@ details[open]{border-color:var(--ac)}
 /* ФОРМА */
 form{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:12px}
 label{font-size:14px;color:var(--mut);display:grid;gap:4px}
-input,select,textarea{font-size:16px;font-family:inherit;padding:11px;border-radius:9px;border:1px solid var(--line);background:var(--bg);color:var(--tx);width:100%}
+
+/* ИСПРАВЛЕНИЕ ВЫСОТЫ ПОЛЕЙ */
+input,select,textarea{
+  font-size:16px; font-family:inherit;
+  padding: 0 12px; /* Убрали вертикальный паддинг, он ломал высоту */
+  height: 48px; /* Фиксированная высота для всех полей */
+  border-radius:9px; border:1px solid var(--line);
+  background:var(--bg); color:var(--tx); width:100%;
+}
+textarea { padding: 12px; height: auto; min-height: 90px; } /* Для текстового поля высота своя */
 input:focus,select:focus,textarea:focus{border-color:var(--ac);outline:none}
+
+/* Специально для поля ДАТА на мобильных */
+input[type="date"] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  -webkit-appearance: none; /* Убираем кривой вид на iOS */
+  appearance: none;
+}
+/* Иконка календаря внутри поля даты */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+  filter: invert(1) brightness(2); /* Делаем иконку белой в темной теме */
+}
+:root[data-theme="light"] input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: none; /* В светлой оставляем черной */
+}
+
 .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 
 /* БЛОК УСПЕХА */
@@ -153,25 +171,12 @@ footer b{color:var(--tx)}
 /* ЯЗЫКИ (МЕСТО ДЛЯ ВАШИХ ФЛАГОВ) */
 .lang{display:flex;gap:6px}
 .lang button{
-  border:1px solid var(--line);
-  background:var(--card);
-  border-radius:8px;
-  padding:4px;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  opacity:.6;
-  transition:opacity .15s, border-color .15s, transform .15s;
-  width: 36px;
-  height: 28px;
+  border:1px solid var(--line); background:var(--card); border-radius:8px; padding:4px;
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+  opacity:.6; transition:opacity .15s, border-color .15s, transform .15s;
+  width: 36px; height: 28px;
 }
-.lang button img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 3px;
-}
+.lang button img { width: 100%; height: 100%; object-fit: contain; border-radius: 3px; }
 .lang button:hover{transform:scale(1.1);opacity:1}
 .lang button.on{border-color:var(--ac);box-shadow:0 0 0 1px var(--ac);opacity:1}
 
@@ -180,47 +185,47 @@ footer b{color:var(--tx)}
    📱 МОБИЛЬНАЯ ВЕРСИЯ (АДАПТАЦИЯ)
    ========================================================== */
 
-/* Планшеты и крупные телефоны */
 @media(max-width: 768px){
   .hero{grid-template-columns:1fr; text-align:center;}
   .hero .row { justify-content: center; }
   .hero .art { max-width: 600px; margin: 0 auto; }
   
   .stats{grid-template-columns:repeat(2,1fr);}
-  nav{display:none;} /* Прячем меню в шапке */
-  .cta{display:flex;} /* Показываем нижнюю панель */
+  nav{display:none;}
+  .cta{display:flex;}
   
   h1 { font-size: 32px; }
   h2 { font-size: 24px; margin-top: 36px; }
 }
 
-/* Маленькие телефоны */
 @media(max-width: 520px){
   body { padding-bottom: calc(90px + env(safe-area-inset-bottom,0px)); }
   .w { padding: 0 12px; }
   
-  /* Шапка: делаем кнопку темы и флаги аккуратнее */
-  header { padding: 8px 0; gap: 6px; }
-  .logo span { font-size: 16px; }
-  .logo img { width: 38px; height: 38px; }
-  #theme { padding: 8px 10px; }
-  
-  /* Услуги и товары: В 2 КОЛОНКИ, чтобы не скроллить вечно */
+  /* ИСПРАВЛЕНИЕ ШАПКИ: убираем кнопку, чтобы всё влезло */
+  .hdr-cta { display: none !important; } /* Скрываем верхнюю кнопку Записаться */
+  header .row { gap: 4px; margin-left: auto; }
+  header { padding: 8px 0; gap: 4px; }
+  .logo span { font-size: 15px; }
+  .logo img { width: 34px; height: 34px; }
+  #theme { padding: 8px; }
+  .lang button { width: 30px; height: 24px; }
+
+  /* Услуги и товары: В 2 КОЛОНКИ */
   .grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
   }
   
-  /* Карточки в 2 колонки: уменьшаем отступы и шрифты */
+  /* Карточки в 2 колонки */
   .c { padding: 12px; }
   .c h3 { font-size: 14px; line-height: 1.3; }
   .c p { font-size: 12px; line-height: 1.3; }
   
-  /* Иконки делаем чуть меньше */
   .ic-wrap { height: 40px; margin-bottom: 4px; }
   .ic-img { width: 32px; height: 32px; }
   
-  /* Блок с ценой и кнопкой: переносим на новую строку внутри карточки */
+  /* Блок с ценой и кнопкой */
   .pr {
     flex-direction: column;
     align-items: flex-start;
@@ -234,10 +239,10 @@ footer b{color:var(--tx)}
     font-size: 13px;
   }
   
-  /* Форма записи: делаем поля в одну колонку */
+  /* Форма записи: поля в одну колонку */
   .two { grid-template-columns: 1fr; gap: 10px; }
   
-  /* Блок "Почему выбирают" и "Мастера" оставляем в одну колонку для читаемости */
+  /* Карточки мастеров */
   .m-card { flex-direction: row; text-align: left; gap: 12px; padding: 12px; }
   .m-card .ph { width: 60px; height: 60px; margin: 0; flex-shrink: 0; }
   .m-card .pr { width: auto; margin-left: auto; flex-direction: row; }
@@ -245,7 +250,5 @@ footer b{color:var(--tx)}
   
   /* FAQ */
   details { padding: 12px; }
-  
-  /* Подвал */
   footer { gap: 20px; }
 }
